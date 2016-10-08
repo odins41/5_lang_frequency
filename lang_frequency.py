@@ -17,6 +17,6 @@ def get_most_frequent_words(file_path):
 if __name__ == '__main__':
     const = 10
     file_path = input('Введите путь к файлу\n')
-    print ('10 самых частых слов - ',get_most_frequent_words(file_path))
+    print ('10 самых частых слов - ', get_most_frequent_words(file_path))
     
     
