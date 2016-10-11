@@ -3,20 +3,18 @@ import re
 
 def load_data(filepath):
     with open(file_path) as text_file:
-        text_file = open(file_path)
-        text_string = text_file.read()
-    return text_string
+        return text_file
     
 
 def get_most_frequent_words(file_path):
     words = re.findall('\w+', open(file_path).read().lower())
-    frequency = Counter(words).most_common(const)
+    frequency = Counter(words).most_common(number_common_words)
     return frequency
 
 
 if __name__ == '__main__':
-    const = 10
+    number_common_words = 10
     file_path = input('Введите путь к файлу\n')
-    print ('10 самых частых слов - ', get_most_frequent_words(file_path))
+    print ('10 самых частых слов - ',get_most_frequent_words(file_path))
     
     
