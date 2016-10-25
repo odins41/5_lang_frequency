@@ -2,19 +2,21 @@ from collections import Counter
 import re
 
 def load_data(filepath):
-    with open(file_path) as text_file:
-        return text_file
+    with open(filepath) as text_file:
+        text = text_file.read()
+        return text
     
 
-def get_most_frequent_words(file_path):
-    words = re.findall('\w+', open(file_path).read().lower())
+def get_most_frequent_words(text_file):
+    number_common_words = 10
+    words = re.findall('\w+', text_file)
     frequency = Counter(words).most_common(number_common_words)
     return frequency
 
 
 if __name__ == '__main__':
-    number_common_words = 10
     file_path = input('Введите путь к файлу\n')
-    print ('10 самых частых слов - ',get_most_frequent_words(file_path))
+    text_file = load_data(file_path) 
+    print ('10 самых частых слов - ', get_most_frequent_words(text_file))
     
     
